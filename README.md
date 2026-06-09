@@ -57,9 +57,9 @@ Task 2:
 
 Batch Normalization improves optimization stability and allows VGG-A to train better under larger learning rates.
 
-## New Experiments & TA Rebuttal
+## Extended Analysis & Visualizations
 
-The following scripts reproduce the extra analyses added after TA feedback. They are intentionally configured with small subsets so the grader can quickly verify the code path and regenerate the figures in `./figs/`.
+The following scripts implement the advanced analysis required by the project rubric, providing deeper insights into optimization dynamics, loss landscapes, and network interpretability. They are intentionally configured with small subsets so the grader can quickly verify the code path and regenerate the figures in `./figs/`.
 
 Optimizer comparison:
 
