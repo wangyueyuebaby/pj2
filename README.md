@@ -64,7 +64,7 @@ The following scripts implement the advanced analysis required by the project ru
 Optimizer comparison:
 
 ```bash
-python optimizer_comparison.py --epochs 3 --n-items 2048 --val-items 1000 --batch-size 128 --num-workers 0 --output-dir ./figs
+python optimizer_comparison.py --epochs 20 --n-items 2048 --val-items 1000 --batch-size 128 --num-workers 0 --output-dir ./figs
 ```
 
 Network insight visualizations:
