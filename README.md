@@ -56,3 +56,32 @@ Task 2:
 - Best VGG-A-BN accuracy: 82.54%
 
 Batch Normalization improves optimization stability and allows VGG-A to train better under larger learning rates.
+
+## New Experiments & TA Rebuttal
+
+The following scripts reproduce the extra analyses added after TA feedback. They are intentionally configured with small subsets so the grader can quickly verify the code path and regenerate the figures in `./figs/`.
+
+Optimizer comparison:
+
+```bash
+python optimizer_comparison.py --epochs 3 --n-items 2048 --val-items 1000 --batch-size 128 --num-workers 0 --output-dir ./figs
+```
+
+Network insight visualizations:
+
+```bash
+python network_insights.py --checkpoint ./reports/models/task1/base_relu_ce_best.pt --batch-size 128 --num-workers 0 --output-dir ./figs
+```
+
+Gradient predictiveness:
+
+```bash
+python gradient_predictiveness.py --n-items 512 --max-batches 4 --batch-size 128 --num-workers 0 --learning-rates 0.001 0.002 0.0001 0.0005 --output-dir ./figs
+```
+
+Generated files:
+
+- `figs/optimizer_comparison.png`: AdamW vs SGD with momentum on `base_relu_ce`.
+- `figs/first_layer_filters.png`: learned first-layer `3x3` filters.
+- `figs/confusion_matrix.png`: CIFAR-10 test confusion matrix.
+- `figs/gradient_predictiveness.png`: VGG-A vs VGG-A-BN gradient-change comparison.
